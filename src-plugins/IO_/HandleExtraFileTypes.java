@@ -324,6 +324,9 @@ public class HandleExtraFileTypes extends ImagePlus implements PlugIn {
 			return tryPlugIn("XYZ_Reader", path);
 		}
 		*/
+        
+		if (name.endsWith(".stack"))
+			return tryPlugIn("ij.plugin.ListVirtualStack", path);
 
 		return null;
 	}
